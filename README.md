@@ -5,8 +5,10 @@ This project is a living collection of examples, documents and guidelines concer
 
 ## HTML
 -  Usage of semantic elements.
+-  HTML5
 
 ## CSS
+-  CSS3
 -  LESS
 -  Patterns
 -  OOCSS
