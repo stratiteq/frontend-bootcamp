@@ -19,3 +19,7 @@ This project is a living collection of examples, documents and guidelines concer
 -  Patterns
 -  ECMA 5
 -  Polyfills
+
+## Responsive web design
+-  Patterns
+-  Images
