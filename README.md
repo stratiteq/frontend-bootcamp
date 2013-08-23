@@ -6,6 +6,7 @@ This project is a living collection of examples, documents and guidelines concer
 ## HTML
 -  Usage of semantic elements.
 -  HTML5
+-  HTML5 Shiv
 
 ## CSS
 -  CSS3
@@ -16,3 +17,5 @@ This project is a living collection of examples, documents and guidelines concer
 
 ## Javascript
 -  Patterns
+-  ECMA 5
+-  Polyfills
