@@ -22,5 +22,6 @@ This project is a living collection of examples, documents and guidelines concer
 
 ## Responsive web design
 -  Patterns
+-  Mobile first
 -  Images
 -  Twerky layouts
