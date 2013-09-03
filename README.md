@@ -25,3 +25,4 @@ This project is a living collection of examples, documents and guidelines concer
 -  Mobile first
 -  Images
 -  Twerky layouts
+-  Performance
