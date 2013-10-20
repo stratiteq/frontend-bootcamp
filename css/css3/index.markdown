@@ -90,4 +90,6 @@ title: CSS 3
 </pre>
 <span style="box-shadow: 0 0 15px 7px blue, 0 0 15px 14px red, 0 0 15px 21px green;margin: 25px;display:inline-block;">My box</span>
 <p>Now isn't that a pretty little box? Well no, it isn't, but it demonstrates the <code>Box-shadow</code> in a good way. What we have is a box with a blue shadow with no horizontal offset, no vertical offset, 15px of blur and 7px of spread. This is followed by a red shadow that stretches 7px beyond this and a green one that stretches even further by 7px.</p>
+<h2 class="section-subtitle">Browser support</h2>
+<p>The box-shadow is supported in IE9 and up and in all other modern browsers.</p>
 </section>
