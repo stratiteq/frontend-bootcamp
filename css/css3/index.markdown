@@ -41,3 +41,24 @@ title: CSS 3
 <p>This simple example demonstrates a class that will animate to its new height if it's hovered or gains/loses the <code>.active</code> class. Saying that it will animate its height isn't the whole story though, it will actually animate any new css property since we've specified "all" as the <code>transition-property</code> value, this is also true for properties added/lost in the elements style attribute. We've set the <code>transition-duration</code> to 0.3 seconds meaning that this is the time the animation will take from start to finish, we've also applied the <code>transition-timing-function ease-in-out</code> meaning that the animation speed won't be linear. The last value that we've applied is the <code>transition-delay</code> value that simply tells the animation to wait the specified intervall after a change has occured before running the animation, this is useful for hover animations that shouldn't run if the user just drags over an element without stopping. You might have noticed that we have two interval values, the order is always duration followed by delay which can be omitted.</p>
  <p>Animations are one of those things that aren't necessary, they definately have their place in UX and design but we should simply omit them instead of using hacks to get them to display in browsers that doesn't support native transitions (mileage may vary). Transitions are supported in IE10 and up and in all other modern browsers.</p>
 </section>
+<section id="animation">
+<h1 class="section-title">Animation</h1>
+<p>Perhaps you feel that transitions is to simple and you need more controll over your animations, well we have <code>animation</code> for that.</p>
+<pre>
+@keyframes name {
+	20% { width: 100px; }
+	50% { width: 150px; height: 100px; }
+	100% { width: 100px; height: 50px; }
+}
+</pre>
+<p>What we have here is a keyframe declaration containing keyframe-selectors. When this animation is run, the element will change from its current width to 100px during the first 20% of the animation (we will define duration later on), it will then gradually widen to 150px and change its height to 100px during the next 30% and stop at 100px width and 50px height when the animation is completed.</p>
+<p>We can then use our keyframe as an animation in a normal CSS selector.</p>
+<pre>
+.classname {
+	animation: name 10s infinite;
+}
+</pre>
+<p>This declaration means that our keyframe will run for 10s and then loop an infinite number of times. If we look back at our keyframe this means that the first keyframes-selector will animate for 2 seconds, the second for 3 and the last one for 5.</p>
+<h2 class="section-subtitle">Browser support</h2>
+<p>The animation and @keyframes is supported in IE10 and up, Firefox and Opera, chrome and safari requires that you make the exact same declaration but with the @-webkit-keyframes and -webkit-animation vendor prefixes and you can unfortunately not create the @keyframes declaration with some pretty comma separated prefixes. But you can of course solve this with a CSS preprocessor.</p>
+</section>
