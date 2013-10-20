@@ -11,7 +11,7 @@ title: CSS 3
 <p>A common style rule is to change every element to use this box model:</p>
 <pre>
 *, *:before, *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 </pre>
 <p>The performance hit because of doing this is extremely negligent as the * selector by itself is incredibly fast because of the way that CSS selectors are parsed.</p>
@@ -31,11 +31,11 @@ title: CSS 3
 <p>Long gone are the days when we performed animations using javascript that ran on the CPU and were never that smooth. This is were CSS transitions come in, they are defined in CSS and render on the GPU if the system supports it. Transitions simply let us animate most CSS properties such as width, padding, color and position properties, they will be triggered whenever a selector "hits" an element:</p>
 <pre>
 .transitionable {
-	transition: all 0.3s ease-in-out 0.5s;
-	height: 100px;
+  transition: all 0.3s ease-in-out 0.5s;
+  height: 100px;
 }
 .transitionable:hover, .transitionable.active {
-	height: 200px;
+  height: 200px;
 }
 </pre>
 <p>This simple example demonstrates a class that will animate to its new height if it's hovered or gains/loses the <code>.active</code> class. Saying that it will animate its height isn't the whole story though, it will actually animate any new css property since we've specified "all" as the <code>transition-property</code> value, this is also true for properties added/lost in the elements style attribute. We've set the <code>transition-duration</code> to 0.3 seconds meaning that this is the time the animation will take from start to finish, we've also applied the <code>transition-timing-function ease-in-out</code> meaning that the animation speed won't be linear. The last value that we've applied is the <code>transition-delay</code> value that simply tells the animation to wait the specified intervall after a change has occured before running the animation, this is useful for hover animations that shouldn't run if the user just drags over an element without stopping. You might have noticed that we have two interval values, the order is always duration followed by delay which can be omitted.</p>
@@ -46,19 +46,36 @@ title: CSS 3
 <p>Perhaps you feel that transitions is to simple and you need more controll over your animations, well we have <code>animation</code> for that.</p>
 <pre>
 @keyframes name {
-	20% { width: 100px; }
-	50% { width: 150px; height: 100px; }
-	100% { width: 100px; height: 50px; }
+  20% { width: 100px; }
+  50% { width: 150px; height: 100px; }
+  100% { width: 100px; height: 50px; }
 }
 </pre>
 <p>What we have here is a keyframe declaration containing keyframe-selectors. When this animation is run, the element will change from its current width to 100px during the first 20% of the animation (we will define duration later on), it will then gradually widen to 150px and change its height to 100px during the next 30% and stop at 100px width and 50px height when the animation is completed.</p>
 <p>We can then use our keyframe as an animation in a normal CSS selector.</p>
 <pre>
 .classname {
-	animation: name 10s infinite;
+  animation: name 10s infinite;
 }
 </pre>
 <p>This declaration means that our keyframe will run for 10s and then loop an infinite number of times. If we look back at our keyframe this means that the first keyframes-selector will animate for 2 seconds, the second for 3 and the last one for 5.</p>
 <h2 class="section-subtitle">Browser support</h2>
 <p>The animation and @keyframes is supported in IE10 and up, Firefox and Opera, chrome and safari requires that you make the exact same declaration but with the @-webkit-keyframes and -webkit-animation vendor prefixes and you can unfortunately not create the @keyframes declaration with some pretty comma separated prefixes. But you can of course solve this with a CSS preprocessor.</p>
+</section>
+<section id="media-queries">
+  <h1 class="section-title">Media queries</h1>
+  <p>Media queries are tightly related to the concept of responsive web design which we will cover in a different module. All we have to go through here is what they are and how we use them.</p>
+  <p>Media queries gives us the ability to override already declared CSS rules under certain circumstances. We normally use these for separating print rules from screen rules and overriding based on the screen width.</p>
+<pre>
+.classnameA .classnameB {
+  width: 100px:
+}
+
+@media screen (min-width: 980px){
+  .classnameA .classnameB {
+    width: 150px;
+  }
+}
+</pre>
+  <p>What we have here is a simple css selector that tells a element with a class of classnameB that is a descendant of a element with a class of classnameA that it should have a width of 100px, but that this should be overriden with a width of 150px if the screen width happens to be above 980px. The important thing to remember here is that the <code>@media</code> in itself doesn't add any specificity, meaning that the media override woulnd't override anything if the "clean" css selector where placed after it instead of before since they have the same specificity.</p>
 </section>
