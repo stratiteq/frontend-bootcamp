@@ -79,3 +79,15 @@ title: CSS 3
 </pre>
   <p>What we have here is a simple css selector that tells a element with a class of classnameB that is a descendant of a element with a class of classnameA that it should have a width of 100px, but that this should be overriden with a width of 150px if the screen width happens to be above 980px. The important thing to remember here is that the <code>@media</code> in itself doesn't add any specificity, meaning that the media override woulnd't override anything if the "clean" css selector where placed after it instead of before since they have the same specificity.</p>
 </section>
+<section id="box-shadow">
+  <h1 class="section-title">Box-shadow</h1>
+  <p>Box-shadow is a nifty little property that relieves us of the burden of having to use images to add shadow effects to elements, and it's simple to.</p>
+<pre>
+.myclass {
+  box-shadow: 0 0 15px 7px blue, 0 0 15px 14px red, 0 0 15px 21px green;
+  margin: 21px;
+}
+</pre>
+<span style="box-shadow: 0 0 15px 7px blue, 0 0 15px 14px red, 0 0 15px 21px green;margin: 25px;display:inline-block;">My box</span>
+<p>Now isn't that a pretty little box? Well no, it isn't, but it demonstrates the <code>Box-shadow</code> in a good way. What we have is a box with a blue shadow with no horizontal offset, no vertical offset, 15px of blur and 7px of spread. This is followed by a red shadow that stretches 7px beyond this and a green one that stretches even further by 7px.</p>
+</section>
