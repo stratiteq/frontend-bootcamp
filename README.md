@@ -3,6 +3,8 @@ frontend-bootcamp
 
 This project is a living collection of examples, documents and guidelines concerning Stratiteqs preferred way of building the front-end part of webapplications.
 
+[http://stratiteq.github.io/frontend-bootcamp/](http://stratiteq.github.io/frontend-bootcamp/)
+
 ## HTML
 -  Usage of semantic elements.
 -  HTML5
