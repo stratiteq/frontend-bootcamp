@@ -11,7 +11,7 @@ title: CSS 3
 <p>A common style rule is to change every element to use this box model:</p>
 <pre>
 *, *:before, *:after {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 </pre>
 <p>The performance hit because of doing this is extremely negligent as the * selector by itself is incredibly fast because of the way that CSS selectors are parsed.</p>
